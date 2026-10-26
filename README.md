@@ -2,7 +2,7 @@
 
 ![Zuno — совместный просмотр до пяти человек](docs/images/cover.png)
 
-Приватный совместный просмотр для **5 участников, включая ведущего** на Ubuntu 24.04 VPS (1 vCPU / 1 ГБ RAM). React + Vite + TypeScript + MUI, Fastify + Socket.IO, встроенный SQLite Node.js (WAL), Caddy и systemd. Видео внешних платформ не проходит через VPS. Без Docker, Redis, транскодирования и сборки на VPS.
+Приватный совместный просмотр для 5 участников
 
 
 ## Как выглядит Zuno
