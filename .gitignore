@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.data/
+artifacts/
+playwright-report/
+test-results/
+*.log
+
+# Personal server deployment guide (kept locally)
+docs/PUTTY.md

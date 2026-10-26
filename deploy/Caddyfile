@@ -1,0 +1,22 @@
+# Replace zuno.example.org with your actual DNS name.
+zuno.example.org {
+	encode zstd gzip
+	request_body {
+		max_size 51MB
+	}
+	@backend path /api/* /socket.io/*
+	handle @backend {
+		reverse_proxy 127.0.0.1:3000
+	}
+	handle {
+		root * /opt/zuno/current/dist/web
+		header {
+			X-Content-Type-Options nosniff
+			Referrer-Policy strict-origin-when-cross-origin
+			X-Frame-Options DENY
+			Content-Security-Policy "default-src 'self'; script-src 'self' https://www.youtube.com https://s.ytimg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://i.ytimg.com; connect-src 'self' wss:; media-src 'self' https: blob:; frame-src https://www.youtube.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+		}
+		try_files {path} /index.html
+		file_server
+	}
+}

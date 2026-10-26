@@ -1,0 +1,163 @@
+:root {
+  font-synthesis: none;
+}
+body {
+  margin: 0;
+}
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+.toolbar {
+  max-width: 1248px;
+  width: 100%;
+  margin: auto;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-block: 12px !important;
+}
+.brand.MuiButton-root {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  padding: 0 16px 0 0;
+}
+.brand span {
+  font-size: 10px;
+  align-self: flex-start;
+  margin-top: 12px;
+  margin-left: 4px;
+}
+.nav {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hero {
+  padding: 44px 36px 50px;
+  border-radius: 32px;
+  background:
+    radial-gradient(ellipse at 90% 20%, #7443ad33, transparent 60%),
+    linear-gradient(130deg, #9875b815, #a783d00c);
+  border: 1px solid #a78ac82b;
+}
+.accent {
+  color: #b89adf;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.source-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: #9875b822;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  font-weight: 700;
+}
+.room-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  align-items: start;
+}
+.screen {
+  aspect-ratio: 16/9;
+  background: #08070c;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.screen video,
+.youtube,
+.youtube iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.empty-player {
+  text-align: center;
+  color: #e1d4ee;
+  padding: 20px;
+}
+.empty-player span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #c8adff22;
+  border: 1px solid #c8adff55;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  color: #c8adff;
+  font-size: 24px;
+}
+.empty-player h2 {
+  font-size: 20px;
+}
+.empty-player p {
+  color: #9e94ad;
+  font-size: 14px;
+}
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 370px;
+  overflow: auto;
+  margin-bottom: 20px;
+  scrollbar-width: thin;
+}
+.message {
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: #9875b80f;
+}
+.message.own {
+  background: #9875b826;
+}
+.chat-card {
+  position: sticky;
+  top: 24px;
+}
+footer {
+  margin-top: 72px;
+  padding: 24px 0;
+  border-top: 1px solid #a78ac82b;
+  color: #8e859d;
+  font-size: 13px;
+}
+@media (max-width: 850px) {
+  .room-layout {
+    grid-template-columns: 1fr;
+  }
+  .chat-card {
+    position: static;
+  }
+  .messages {
+    height: 260px;
+  }
+  .nav {
+    order: 3;
+    flex-basis: 100%;
+    gap: 0;
+  }
+  .nav .MuiButton-root {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .hero {
+    padding: 28px 22px;
+  }
+  .toolbar {
+    justify-content: space-between;
+  }
+}

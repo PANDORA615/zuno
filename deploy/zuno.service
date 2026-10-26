@@ -1,0 +1,32 @@
+[Unit]
+Description=Zuno private watch rooms
+After=network.target
+
+[Service]
+Type=simple
+User=zuno-app
+Group=zuno-app
+WorkingDirectory=/opt/zuno/current
+EnvironmentFile=/etc/zuno.env
+ExecStart=/usr/local/bin/node --max-old-space-size=192 dist/server/index.js
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=20
+StateDirectory=zuno
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/zuno
+MemoryHigh=256M
+MemoryMax=320M
+TasksMax=64
+CPUQuota=80%
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=zuno
+
+[Install]
+WantedBy=multi-user.target
